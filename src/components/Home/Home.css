@@ -1,0 +1,40 @@
+.Login {
+    width: 20%;
+    overflow: hidden;
+    display: inline-block;
+    border: 1px #000 solid;
+    padding: 0px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.795);
+    margin-top: 20px;
+    float: right;
+}
+
+.inputs  {
+    text-align: center;
+    margin: 0px;
+    margin-bottom: 15px;
+    padding: 20px;
+
+}
+
+.inputs input{
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 0px;
+}
+
+.Login h3 {
+    color: rgb(0, 162, 255);
+    text-align: center;
+}
+
+.Login button {
+    width: 85%;
+    display: inline-block;
+    text-align: center;
+    overflow: hidden;
+    margin-top: 20px;
+
+}
