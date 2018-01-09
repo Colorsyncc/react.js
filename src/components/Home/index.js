@@ -13,21 +13,30 @@ class Home extends Component {
     this.handleChanged = this.handleChanged.bind(this);
 }
 
-handleChanged(e) {
- const name = e.target.name;
+handleChanged(e, type) {
+
  const value = e.target.value;
- this.setState({
-     [name] : value
- });
+ if (type === "name") {
+     this.setState({
+         name : value
+     });
+ } else {
+    this.setState({
+        password : value
+    })
+ }
 
-if (name.length === 0) {
-    alert("campo incorrecto");
-  }else {
-      return true;
+
+function validate() {
+    if (value.length === 0) {
+        console.log("Campo obligatorio");
+    } else {
+        return true;
+    };
   }
+validate(value);
+
 }
-
-
 
 
     render() {
@@ -38,8 +47,8 @@ if (name.length === 0) {
   <div className="Login">
             <h3>Iniciar sesión</h3>
             <div className="inputs">
-        <input type="text" id="validUser" name="name" value={this.state.name} placeholder="Username" onChange={this.handleChanged}/>
-        <input type="password" id="validPassword" name="password"value={this.state.password} placeholder="Password" onChange={this.handleChanged} />
+        <input type="text" id="validUser" name="name"  placeholder="Username" onChange={(e) => this.handleChanged(e, "name")}/>
+        <input type="password" id="validPassword" name="password" placeholder="Password" onChange={this.handleChanged} />
         <a href="">Registrate</a>
         <button id="validButton" type="submit" className="btn btn-primary btn-block" onSubmit={this.handleSubmit}>Entrar</button>
             </div>
